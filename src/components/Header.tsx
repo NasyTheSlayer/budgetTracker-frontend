@@ -9,19 +9,19 @@ import { toast } from "react-toastify";
 
 const Header: FC = () => {
   const isAuth = useAuth();
-  const dispatch = useAppDispatch()
-  const navigate = useNavigate()
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
 
   const logoutHandler = () => {
-    dispatch(logout())
-    removeTokenToLocalStorage('token')
-    toast.success('You logged out.')
-    navigate('/')
-  }
+    dispatch(logout());
+    removeTokenToLocalStorage("token");
+    toast.success("You logged out.");
+    navigate("/budgetTracker-frontend");
+  };
 
   return (
     <header className="flex items-center bg-slate-800 p-4 shadow-sm backdrop-blur-sm">
-      <Link to="/">
+      <Link to="/budgetTracker-frontend">
         <FaBtc size={20} />
       </Link>
 
@@ -30,7 +30,7 @@ const Header: FC = () => {
           <ul className="flex items-center gap-5">
             <li>
               <NavLink
-                to={"/"}
+                to={"/budgetTracker-frontend"}
                 className={({ isActive }) =>
                   isActive ? "text-white" : "text-white/50"
                 }
@@ -62,18 +62,19 @@ const Header: FC = () => {
         </nav>
       )}
 
-      {
-        isAuth ? (
-          <button className="btn btn-red" onClick={logoutHandler}>
-            <span>Log Out</span>
-            <FaSignOutAlt />
-          </button>
-        ) : (
-          <Link className="py-2 text-white/50 hover:text-white ml-auto" to={'auth'}>
-            Log In / Sign In
-          </Link>
-        )
-      }
+      {isAuth ? (
+        <button className="btn btn-red" onClick={logoutHandler}>
+          <span>Log Out</span>
+          <FaSignOutAlt />
+        </button>
+      ) : (
+        <Link
+          className="py-2 text-white/50 hover:text-white ml-auto"
+          to={"/auth"}
+        >
+          Log In / Sign In
+        </Link>
+      )}
     </header>
   );
 };
