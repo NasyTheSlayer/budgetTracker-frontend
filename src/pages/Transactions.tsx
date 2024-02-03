@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
 import TransactionForm from "../components/TransactionForm";
 import { instance } from "../api/axios.api";
 import {
@@ -55,36 +55,6 @@ export const transactionAction = async ({ request }: any) => {
 const Transactions: FC = () => {
   const { totalIncome, totalExpense } =
     useLoaderData() as IResponseTransactionLoader;
-  const [, setLoadedData] = useState<IResponseTransactionLoader | null>(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const categories = await instance.get<ICategory[]>("/categories");
-        const transactions =
-          await instance.get<ITransaction[]>("/transactions");
-        const totalIncomeResponse = await instance.get<number>(
-          "/transactions/income/find"
-        );
-        const totalExpenseResponse = await instance.get<number>(
-          "/transactions/expense/find"
-        );
-
-        const data = {
-          categories: categories.data,
-          transactions: transactions.data,
-          totalIncome: totalIncomeResponse.data,
-          totalExpense: totalExpenseResponse.data,
-        };
-
-        setLoadedData(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
 
   return (
     <>
@@ -110,7 +80,7 @@ const Transactions: FC = () => {
                 Total Expense:
               </p>
               <p className="mt-2 rounded-sm text-center bg-red-500 p-1">
-                {formatToUSD.format(totalExpense)}
+              {formatToUSD.format(totalExpense)}
               </p>
             </div>
           </div>

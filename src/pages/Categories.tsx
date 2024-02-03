@@ -1,8 +1,8 @@
 /* eslint-disable react-refresh/only-export-components */
-import { FC, useEffect, useState } from "react";
+import { FC, useState } from "react";
 import { AiFillCloseCircle, AiFillEdit } from "react-icons/ai";
 import { FaPlus } from "react-icons/fa";
-import { Form } from "react-router-dom";
+import { Form, useLoaderData } from "react-router-dom";
 import CategoryModal from "../components/CategoryModal";
 import { instance } from "../api/axios.api";
 import { ICategory } from "../types/types";
@@ -41,23 +41,11 @@ export const categoryLoader = async () => {
 };
 
 const Categories: FC = () => {
-  const [categories, setCategories] = useState<ICategory[]>([]);
+  const categories = useLoaderData() as ICategory[];
   const [categoryId, setCategoryId] = useState<number>(0);
   const [isEdit, setIsEdit] = useState<boolean>(false);
+
   const [visibleModal, setVisibleModal] = useState<boolean>(false);
-
-  useEffect(() => {
-    const fetchCategories = async () => {
-      try {
-        const { data } = await instance.get<ICategory[]>("/categories");
-        setCategories(data);
-      } catch (error) {
-        console.error("Error fetching categories:", error);
-      }
-    };
-
-    fetchCategories();
-  }, []);
 
   return (
     <>
