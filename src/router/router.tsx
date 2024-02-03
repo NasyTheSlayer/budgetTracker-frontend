@@ -51,5 +51,5 @@ export const router = createBrowserRouter(
       ],
     },
   ],
-  { basename: "/budgetTracker-frontend" }
+  { basename: import.meta.env.BASE_URL }
 );
