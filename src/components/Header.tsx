@@ -16,12 +16,12 @@ const Header: FC = () => {
     dispatch(logout())
     removeTokenToLocalStorage('token')
     toast.success('You logged out.')
-    navigate('/')
+    navigate('/budgetTracker-frontend')
   }
 
   return (
     <header className="flex items-center bg-slate-800 p-4 shadow-sm backdrop-blur-sm">
-      <Link to="/">
+      <Link to="/budgetTracker-frontend">
         <FaBtc size={20} />
       </Link>
 
@@ -30,7 +30,7 @@ const Header: FC = () => {
           <ul className="flex items-center gap-5">
             <li>
               <NavLink
-                to={"/"}
+                to={"/budgetTracker-frontend"}
                 className={({ isActive }) =>
                   isActive ? "text-white" : "text-white/50"
                 }

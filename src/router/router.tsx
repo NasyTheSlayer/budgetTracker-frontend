@@ -9,7 +9,7 @@ import ProtectedRoute from "../components/ProtectedRoute";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/budgetTracker-frontend",
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
@@ -18,7 +18,7 @@ export const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: "transactions",
+        path: "/transactions",
         action: transactionAction,
         loader: transactionLoader,
         element: (
@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "categories",
+        path: "/categories",
         action: categoriesAction,
         loader: categoryLoader,
         element: (
@@ -38,7 +38,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "auth",
+        path: "/auth",
         element: <Auth />,
       },
     ],
