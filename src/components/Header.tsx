@@ -16,7 +16,7 @@ const Header: FC = () => {
     dispatch(logout())
     removeTokenToLocalStorage('token')
     toast.success('You logged out.')
-    navigate('/')
+    navigate('/budgetTracker-frontend ')
   }
 
   return (
