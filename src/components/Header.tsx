@@ -7,7 +7,7 @@ import { logout } from "../store/user/userSlice";
 import { removeTokenToLocalStorage } from "../helpers/localstorage.helper";
 import { toast } from "react-toastify";
 
-const Header: FC = () => {
+const   Header: FC = () => {
   const isAuth = useAuth();
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
