@@ -69,8 +69,8 @@ const TransactionTable: FC<ITransactionTablet> = ({ limit = 3 }) => {
                 <td
                   className={
                     transaction.type === "income"
-                      ? "text-red-500"
-                      : "text-green-500"
+                      ? "text-green-500"
+                      : "text-red-500"
                   }
                 >
                   {transaction.type === "income"

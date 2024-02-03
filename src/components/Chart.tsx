@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { PieChart, Pie, Cell, Legend, Tooltip } from "recharts";
 
-const COLORS = ["#00C49F", "#FF8042"];
+const COLORS = ["#FF8042", "#00C49F"];
 
 interface IChart {
   totalIncome: number;
