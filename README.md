@@ -1,30 +1,47 @@
-# React + TypeScript + Vite
+# React Pizza
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [DEMO LINK](https://nasytheslayer.github.io/budgetTracker-frontend/)
 
-Currently, two official plugins are available:
+## General info
+The budget management website is a comprehensive full-stack application designed to empower users in effectively controlling their finances. With a user-friendly interface, individuals can effortlessly set, track, and manage their budgets, log financial transactions, and categorize spending for better organization. Combining the strength of backend and frontend technologies, this application ensures data security while providing insights into users' financial habits and overall health. The intuitive design and additional tools contribute to a seamless and enjoyable user experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies
+Project was created with:
+Backend Technologies:
+- Nest
+- PostgreSQL
+- TypeORM
+Frontend Technologies:
+- React/Redux(Redux toolkit)
+- TypeScript
+- Axios/Fetch
+- CSS-Modules / SCSS 
+- Prettier
+- React Pagination/React Hooks
+- Lodash.Debounce
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Setup
+1. Use 14 version of node.js:
+```
+$ nvm use 14
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Clone the repository to your local machine, open terminal (GitBash for Windows users) and clone repo with command bellow:
+```
+$ git clone https://github.com/NasyTheSlayer/budgetTracker-frontend
+```
+
+3. Open project in terminal (or GitBash for Windows users):
+```
+$ code budgetTracker-frontend
+```
+
+4. Set up project and install necessary packages in the code-editor you use:
+```
+$ npm install
+```
+
+5. Open the project in browser:
+```
+$ npm run dev
+```
