@@ -1,4 +1,4 @@
-# React Pizza
+# budgetTracker
 
 - [DEMO LINK](https://nasytheslayer.github.io/budgetTracker-frontend/)
 
