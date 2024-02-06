@@ -15,7 +15,7 @@ Frontend Technologies:
 - React/Redux(Redux toolkit)
 - TypeScript
 - Axios/Fetch
-- CSS-Modules / SCSS 
+- Tailwind CSS / SCSS 
 - Prettier
 - React Pagination/React Hooks
 - Lodash.Debounce
